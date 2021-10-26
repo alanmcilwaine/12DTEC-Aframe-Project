@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan's VR Website</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 </head>
 <body>
-    
+    <a-scene inspector-plugin-recast>
+<!-- Camera Rig -->
+        <a-entity id="Rig" position="0 0 5" movement-controls="constrainToNavMesh:true">
+            <a-entity camera position="0 1.6 0" look-controls></a-entity>
+        </a-entity>
+<!-- Navigation Mesh -->
+        <a-gltf-model src="models/navmesh.gltf" nav-mesh></a-gltf-model>
+<!-- Floor -->
+        <a-plane color="red "id="floor" rotation= "-90 0 0" scale="20 20 0"></a-plane>
+
+    </a-scene>
 </body>
 </html>
