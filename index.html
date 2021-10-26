@@ -12,13 +12,13 @@
 <body>
     <a-scene inspector-plugin-recast>
 <!-- Camera Rig -->
-        <a-entity id="Rig" position="0 0 5" movement-controls="constrainToNavMesh:true">
+        <a-entity id="Rig" position="0 0 0" movement-controls="constrainToNavMesh:true">
             <a-entity camera position="0 1.6 0" look-controls></a-entity>
         </a-entity>
 <!-- Navigation Mesh -->
-        <a-gltf-model src="models/navmesh.gltf" nav-mesh></a-gltf-model>
+        <a-gltf-model src="models/maze.gltf"></a-gltf-model>
 <!-- Floor -->
-        <a-plane color="red "id="floor" rotation= "-90 0 0" scale="20 20 0"></a-plane>
+
 
     </a-scene>
 </body>
