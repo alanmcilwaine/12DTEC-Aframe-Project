@@ -15,14 +15,16 @@
         <a-assets>
             <a-asset-item id="maze" src="models/maze.gltf"></a-asset-item>
             <a-asset-item id="navmesh" src="models/navmesh.gltf"></a-asset-item>
+            <a-asset-item id="mazeRoute" src="models/mazeRoute.gltf"></a-asset-item>
         </a-assets>
 <!-- Camera Rig -->
         <a-entity id="Rig" position="0 0.1 70" movement-controls="constrainToNavMesh:true; speed:0.6">
-            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled:true"></a-entity>
+            <a-entity camera position="0 1.6 0" look-controls></a-entity>
         </a-entity>
 <!-- Navigation Mesh -->
         <a-gltf-model id="maze" src="#maze" scale="12 12 12"></a-gltf-model>
         <a-gltf-model src="#navmesh" nav-mesh visible="false"></a-gltf-model>
+        <a-gltf-model id="mazeRoute" src="#mazeRoute" scale="12 12 12"></a-gltf-model>
 <!-- Sun -->
         <a-simple-sun-sky sun-position="1 0.1 0" fog-color="#5681ac"></a-simple-sun-sky>
     </a-scene>
