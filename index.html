@@ -13,15 +13,15 @@
     <a-scene inspector-plugin-recast>
         <a-assets>
             <a-asset-item id="maze" src="models/maze.gltf"></a-asset-item>
-            <a-asset-item id="navmesh" src="models/navmesh.gltf"></a-asset-item>
+            <!-- <a-asset-item id="navmesh" src="models/navmesh.gltf"></a-asset-item> -->
         </a-assets>
 <!-- Camera Rig -->
-        <a-entity id="Rig" position="0 0 0" movement-controls="constrainToNavMesh:true">
-            <a-entity camera position="0 1.6 0" look-controls></a-entity>
+        <a-entity id="Rig" position="0 0 70" movement-controls="constrainToNavMesh:true">
+            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled:true"></a-entity>
         </a-entity>
 <!-- Navigation Mesh -->
-        <a-gltf-model src="#maze"></a-gltf-model>
-        <a-gltf-model src="#navmesh" nav-mesh></a-gltf-model>
+        <a-gltf-model id="maze" src="#maze" scale="12 12 12"></a-gltf-model>
+        <!-- <a-gltf-model src="#navmesh" nav-mesh></a-gltf-model> -->
     </a-scene>
 </body>
 </html>
