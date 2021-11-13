@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
     <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <a-scene inspector-plugin-recast>
@@ -18,15 +19,30 @@
             <a-asset-item id="mazeRoute" src="models/mazeRoute.gltf"></a-asset-item>
         </a-assets>
 <!-- Camera Rig -->
+        <!-- <a-entity camera="active: true" look-controls wasd-controls="constrainToNavMesh:true" position="0 1.6 0">
+            <a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.008; radiusOuter: 0.02"
+            material="color: black; shader: flat">
+            </a-entity>
+        </a-entity> -->
         <a-entity id="Rig" position="0 0.1 70" movement-controls="constrainToNavMesh:true; speed:0.6">
-            <a-entity camera position="0 1.6 0" look-controls></a-entity>
+            <a-entity camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled:true">
+                <a-entity cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015"
+                    material="color: white; shader: flat">
+                </a-entity>
+            </a-entity>
         </a-entity>
 <!-- Navigation Mesh -->
-        <a-gltf-model id="maze" src="#maze" scale="12 12 12"></a-gltf-model>
+        <a-gltf-model id="mazeCall" src="#maze" scale="12 12 12"></a-gltf-model>
         <a-gltf-model src="#navmesh" nav-mesh visible="false"></a-gltf-model>
-        <a-gltf-model id="mazeRoute" src="#mazeRoute" scale="12 12 12"></a-gltf-model>
+        <a-gltf-model id="mazeRouteCall" src="#mazeRoute" scale="12 12 12" visible="false"></a-gltf-model>
 <!-- Sun -->
         <a-simple-sun-sky sun-position="1 0.1 0" fog-color="#5681ac"></a-simple-sun-sky>
+<!-- Buttons -->
+        <a-entity id="pathText" rotation="-180 0 -180" text="value:Show Cheat Path; align:center;" position="-3.5 4 81" scale="9 9 9" ></a-entity>
+        <a-entity id="pathConfirmText" rotation="-180 0 -180" text="value:Off;align:center;" position="-3.5 2.2 81" scale="9 9 9"></a-entity>
+        <a-box id="pathButton" scale="0.8 0.8 0.8" position="-3.5 3 81" color="red" show-path></a-box>
     </a-scene>
 </body>
 </html>
