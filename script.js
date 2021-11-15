@@ -25,4 +25,55 @@ AFRAME.registerComponent("show-path", {
         })
         }
       })
-  
+
+  AFRAME.registerComponent("change-map-easy", {
+      init: function (){
+          this.el.addEventListener("click", function(){
+            let currentMap = document.querySelector("#mazeCall").getAttribute("src");
+            let changeMap = document.querySelector("#mazeCall")
+            if (currentMap == "#mazeEasy"){
+                console.log("Easy => Easy")
+                changeMap.setAttribute("src", "#mazeEasy")
+            }else if (currentMap == "mazeMed"){
+                console.log("Medium => Easy")
+                changeMap.setAttribute("src", "#mazeEasy")
+            }else{
+                console.log("Hard => Easy")
+                changeMap.setAttribute("src", "#mazeEasy")
+            }
+          })
+      }
+  })
+  AFRAME.registerComponent("change-map-med", {
+    init: function (){
+        this.el.addEventListener("click", function(){
+          let currentMap = document.querySelector("#mazeCall").getAttribute("src");
+          let changeMap = document.querySelector("#mazeCall")
+          if (currentMap == "#mazeEasy"){
+              console.log("Easy => Medium")
+              changeMap.setAttribute("src", "#mazeMed")
+          }else if (currentMap == "mazeMed"){
+              console.log("Medium => Medium")
+              changeMap.setAttribute("src", "#mazeMed")
+          }else{
+              console.log("Hard => Medium")
+              changeMap.setAttribute("src", "#mazeMed")
+          }
+          })
+        }
+    })
+
+    AFRAME.registerComponent("change-map-hard", {
+        init: function (){
+            this.el.addEventListener("click", function(){
+            let currentMap = document.querySelector("#mazeCall").getAttribute("src");
+            if (currentMap == "#mazeEasy"){
+                console.log("Easy => Hard")
+            }else if (currentMap == "mazeMed"){
+                console.log("Medium => Hard")
+            }else{
+                console.log("Hard => Hard")
+            }
+            })
+        }
+    })
