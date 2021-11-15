@@ -3,9 +3,9 @@ AFRAME.registerComponent("show-path", {
         //Listens for a mouse "click", in this case it would be a hover
         this.el.addEventListener("click", function(){
             //Assign currentPresetRoute to the visibility of the cheat path
-            let currentPresetRoute = document.querySelector("#mazeRouteCall").getAttribute("visible");
+            let currentPresetRoute = document.querySelector("#mazeRouteEasyCall").getAttribute("visible");
             //Assign changePresetRoute to the cheat path model
-            let changePresetRoute = document.querySelector("#mazeRouteCall")
+            let changePresetRoute = document.querySelector("#mazeRouteEasyCall")
             //Assign changePresetText to the cheat path text
             let changeRouteText = document.querySelector("#pathConfirmText")
 
