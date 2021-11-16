@@ -14,12 +14,13 @@
 <body>
     <a-scene>
      <a-assets>
+<!-- Maze Difficulties -->
             <a-asset-item id="mazeEasy" src="models/mazeEasy.gltf"></a-asset-item>
             <a-asset-item id="mazeMed" src="models/mazeMed.gltf"></a-asset-item>
             <a-asset-item id="mazeHard" src="models/mazeHard.gltf"></a-asset-item>
-
+<!-- Navmesh -->
             <a-asset-item id="navmesh" src="models/navmesh.gltf"></a-asset-item>
-
+<!-- Cheat route -->
             <a-asset-item id="mazeRouteEasy" src="models/mazeRouteEasy.gltf"></a-asset-item>
             <a-asset-item id="mazeRouteMed" src="models/mazeRouteMed.gltf"></a-asset-item>
             <a-asset-item id="mazeRouteHard" src="models/mazeRouteHard.gltf"></a-asset-item>
@@ -38,7 +39,7 @@
         <a-entity id="maze" position="0 0 70">
 
 <!-- Navigation Mesh -->
-        <a-gltf-model id="mazeCall" src="#mazeMed" scale="12 12 12">
+        <a-gltf-model id="mazeCall" class="easy" src="#mazeEasy" scale="12 12 12">
             <a-entity id="pathText" rotation="-180 0 -180" text="value:Show Cheat Path; align:center;" position="-0.5 0.34 1.02" scale="0.8 0.8 0.8" ></a-entity>
             <a-entity id="pathConfirmText" rotation="-180 0 -180" text="value:Off;align:center;" position="-0.5 0.15 1.02" scale="0.8 0.8 0.8"></a-entity>
             <a-box id="pathButton" scale="0.08 0.08 0.08" position="-0.5 0.23 1.02" color="red" show-path></a-box>
@@ -48,8 +49,33 @@
             <a-box id="easyButton" scale="0.08 0.08 0.08" position="0.1 0.23 1.02" color="green" change-map-easy></a-box>
             <a-box id="MediumButton" scale="0.08 0.08 0.08" position="0 0.23 1.02" color="orange" change-map-med></a-box>
             <a-box id="HardButton" scale="0.08 0.08 0.08" position="-0.1 0.23 1.02" color="red" change-map-hard></a-box>
-
         </a-gltf-model>
+
+        <a-gltf-model id="mazeCall" class="medium" src="#mazeMedium" scale="12 12 12" visible="false">
+            <a-entity id="pathText" rotation="-180 0 -180" text="value:Show Cheat Path; align:center;" position="-0.5 0.34 1.02" scale="0.8 0.8 0.8" ></a-entity>
+            <a-entity id="pathConfirmText" rotation="-180 0 -180" text="value:Off;align:center;" position="-0.5 0.15 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-box id="pathButton" scale="0.08 0.08 0.08" position="-0.5 0.23 1.02" color="red" show-path></a-box>
+
+            <a-entity id="mapText" rotation="-180 0 -180" text="value:Change Difficulty; align:center" position="0 0.34 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-entity id="mapConfirmText" rotation="-180 0 -180" text="value:Medium; align:center" position="0 0.15 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-box id="easyButton" scale="0.08 0.08 0.08" position="0.1 0.23 1.02" color="green" change-map-easy></a-box>
+            <a-box id="MediumButton" scale="0.08 0.08 0.08" position="0 0.23 1.02" color="orange" change-map-med></a-box>
+            <a-box id="HardButton" scale="0.08 0.08 0.08" position="-0.1 0.23 1.02" color="red" change-map-hard></a-box>
+        </a-gltf-model>
+
+        <a-gltf-model id="mazeCall" class="hard" src="#mazeHard" scale="12 12 12" visible="false">
+            <a-entity id="pathText" rotation="-180 0 -180" text="value:Show Cheat Path; align:center;" position="-0.5 0.34 1.02" scale="0.8 0.8 0.8" ></a-entity>
+            <a-entity id="pathConfirmText" rotation="-180 0 -180" text="value:Off;align:center;" position="-0.5 0.15 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-box id="pathButton" scale="0.08 0.08 0.08" position="-0.5 0.23 1.02" color="red" show-path></a-box>
+
+            <a-entity id="mapText" rotation="-180 0 -180" text="value:Change Difficulty; align:center" position="0 0.34 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-entity id="mapConfirmText" rotation="-180 0 -180" text="value:Hard; align:center" position="0 0.15 1.02" scale="0.8 0.8 0.8"></a-entity>
+            <a-box id="easyButton" scale="0.08 0.08 0.08" position="0.1 0.23 1.02" color="green" change-map-easy></a-box>
+            <a-box id="MediumButton" scale="0.08 0.08 0.08" position="0 0.23 1.02" color="orange" change-map-med></a-box>
+            <a-box id="HardButton" scale="0.08 0.08 0.08" position="-0.1 0.23 1.02" color="red" change-map-hard></a-box>
+        </a-gltf-model>
+
+
         <a-gltf-model src="#navmesh" nav-mesh visible="false"></a-gltf-model>
          <a-gltf-model id="mazeRouteEasyCall" src="#mazeRouteEasy" scale="12 12 12" visible="false"></a-gltf-model>
 
