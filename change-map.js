@@ -4,16 +4,15 @@ AFRAME.registerComponent("change-map", {
           let currentMap = document.querySelector("#mazeCall").getAttribute("src");
           let changeMap = document.querySelector("#mazeCall")
           let currentBox = this.getAttribute("class")
-          if (currentMap == "#mazeEasy" && currentBox == "med" || currentMap == "#mazeEasy" && currentBox == "hard"){
-              console.log("Changing scene from" + currentMap +  "=> Easy")
+          if (currentBox == "easy"){
+              console.log("Changing scene from " + currentMap +  "=> Easy")
               console.log("Clicked Box: Easy")
               changeMap.setAttribute("src", "models/mazeEasy.gltf")
-          }else if (currentMap == "#mazeMed" && currentBox == "easy"){
-              console.log("Medium => Easy")
+          }else if (currentBox == "med"){
+              console.log(currentBox + " => Medium")
               changeMap.setAttribute("src", "models/mazeMed.gltf")
           }else{
-              console.log("Hard => Easy")
-              console.log(currentMap)
+              console.log(currentBox + " => Hard")
               changeMap.setAttribute("src", "models/mazeHard.gltf")
           }
         })
