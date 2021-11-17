@@ -57,19 +57,21 @@
           <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false" position="0 0 -70"></a-gltf-model>
           <a-gltf-model id="trophyCall" src="#trophy" position="-3.5 -0.5 -80"></a-gltf-model>
           <a-gltf-model id="trophyCall" src="#trophy" position="3.5 -0.5 -80"></a-gltf-model>
-          <a-gltf-model id="titleCall" src="#title" position="0 10 -10" rotation="110 0 0" scale="2 2 2"></a-gltf-model>
+          <a-gltf-model id="titleCall" src="#title" position="0 10 -10" rotation="120 0 0" scale="3 3 3"></a-gltf-model>
 <!-- Calling navmesh -->
           <a-gltf-model id="meshCall" src="#easyMesh" nav-mesh visible="false"></a-gltf-model>
 <!-- Buttons  -->
           <!-- START -->
           <a-entity id="instructionText" text="value:Hover over the buttons to change difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 5.8 11.85"></a-entity>
+          <a-entity id="mazeInstruction" text="value:Instructions:; align:center;" scale="12 12 12" rotation="0 90 0" position="-11 2 1.7"></a-entity>
+          <a-entity id="mazeText" text="value:Walk with WASD and use the mouse to look around. Try to get to the end of the maze. Hover on coloured boxes to activate them." scale="8 8 8" rotation="0 90 0" position="-11 1.6 -4.6"></a-entity>
 
           <!-- Difficulties Start-->
           <a-entity id="difficultyText" text="value:Change Difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 4.25 11.85"></a-entity>
           <a-box id="easyButton" class="easy" scale="1 1 1" position="1.5 3 11.85" color="green" change-map></a-box>
           <a-box id="medButton" class="med" scale="1 1 1" position="0 3 11.85" color="orange" change-map></a-box>
           <a-box id="hardButton" class="hard" scale="1 1 1" position="-1.5 3 11.85" color="red" change-map></a-box>
-          <a-entity id="difficultyValue" text="value:Easy; align:center;" scale="9 9 9" rotation="180 0 180" position="0 2 11.85"></a-entity>
+          <a-entity id="difficultyValue" text="value:Current Map: Easy; align:center;" scale="9 9 9" rotation="180 0 180" position="0 2 11.85"></a-entity>
 
           <!-- Cheat Path Start-->
           <a-entity id="pathText" text="value:Show Final Path; align:center;" scale="12 12 12" rotation="180 0 180" position="5 4.25 11.85"></a-entity>
