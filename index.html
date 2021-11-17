@@ -7,7 +7,7 @@
 	<title>Alan's Maze</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 
-	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>
@@ -15,8 +15,6 @@
     <script src="change-map.js"></script>
     <script src="show-path.js"></script>
 
-	<!-- <script src="/script/show-path.js"></script>
-	<script src="/script/change-world.js"></script> -->
 
 </head>
 
@@ -28,7 +26,6 @@
             <a-asset-item id="mazeEasy" src="models/mazeEasy.gltf"></a-asset-item>
             <a-asset-item id="mazeMed" src="models/mazeMed.gltf"></a-asset-item>
             <a-asset-item id="mazeHard" src="models/mazeHard.gltf"></a-asset-item>
-            <a-asset-item id="mazeMedium" src="models/mazeMed.glb"></a-asset-item>
 
 <!-- Adding path -->
             <a-asset-item id="pathEasy" src="models/mazeRouteEasy.gltf"></a-asset-item>
@@ -36,10 +33,11 @@
             <a-asset-item id="pathHard" src="models/mazeRouteHard.gltf"></a-asset-item>
 
 <!-- Navmesh -->
+            <a-asset-item id="easyMesh" src="models/easyMesh.gltf"></a-asset-item>
         </a-assets>
 <!-- Camera -->
-        <a-entity id="rig" movement-controls="constrainToNavMesh: true">
-            <a-entity camera position="0 1.6 0" look-controls>
+        <a-entity id="rig" movement-controls="constrainToNavMesh: true; speed: 0.4;">
+            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled:true">
                 <a-entity 
                 cursor="fuse:true;fuseTimeout:500"
                 position="0 0 -2"
@@ -53,17 +51,19 @@
 <!-- Calling objects -->
           <a-gltf-model id="mazeCall" class="easy" src="#mazeEasy" scale="12 12 12"></a-gltf-model>
           <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false" position="0 0 -70"></a-gltf-model>
+<!-- Calling navmesh -->
+          <a-gltf-model id="meshCall" src="#easyMesh" nav-mesh visible="false"></a-gltf-model>
 <!-- Buttons  -->
           <a-entity id="instructionText" text="value:Hover over the buttons to change difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 5.8 11.85"></a-entity>
 
-          <!-- Difficulties -->
+          <!-- Difficulties Start-->
           <a-entity id="difficultyText" text="value:Change Difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 4.25 11.85"></a-entity>
           <a-box id="easyButton" class="easy" scale="1 1 1" position="1.5 3 11.85" color="green" change-map></a-box>
           <a-box id="medButton" class="med" scale="1 1 1" position="0 3 11.85" color="orange" change-map></a-box>
           <a-box id="hardButton" class="hard" scale="1 1 1" position="-1.5 3 11.85" color="red" change-map></a-box>
           <a-entity id="difficultyValue" text="value:Easy; align:center;" scale="9 9 9" rotation="180 0 180" position="0 2 11.85"></a-entity>
 
-          <!-- Cheat Path -->
+          <!-- Cheat Path Start-->
           <a-entity id="pathText" text="value:Show Final Path; align:center;" scale="12 12 12" rotation="180 0 180" position="5 4.25 11.85"></a-entity>
           <a-box id="pathButton" scale="1 1 1" position="5 3 11.85" color="red" show-path></a-box>
           <a-entity id="pathValue" text="value:Off; align:center;" scale="9 9 9" rotation="180 0 180" position="5 2 11.85"></a-entity>
