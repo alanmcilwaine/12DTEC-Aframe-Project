@@ -10,7 +10,7 @@ AFRAME.registerComponent("change-map", {
           let changeText = document.querySelector("#difficultyValue");
           let changeColor = document.querySelector("#pathButton");
           let changeMesh = document.querySelector("#meshCall");
-
+          let cameraPosition = document.querySelector("#rig");
           function mapChange (src, mapClass, difficulty, meshSrc){
             changeMap.setAttribute("src", src)
             changeMap.setAttribute("class", mapClass)
@@ -18,18 +18,21 @@ AFRAME.registerComponent("change-map", {
             changeText.setAttribute("text", "value", difficulty)
             changeColor.setAttribute("color", "red")
             changeMesh.setAttribute("src", meshSrc)
+            cameraPosition.setAttribute("position", "0 0 0.1")
         }
+
+
 // Checks which box is clicked. (currentBox) class. 
 // Changes the map to whatever class was clicked 
           if (currentBox == "easy"){
               console.log("Changing scene from " + currentMap +  " => Easy")
-              mapChange("models/mazeEasy.gltf","easy", "Easy", "models/easyMesh.gltf");
+              mapChange("models/mazeEasy.gltf","easy", "Current Map: Easy", "models/easyMesh.gltf");
           }else if (currentBox == "med"){
               console.log("Changing scene from " + currentMap +  " => Medium")
-              mapChange("models/mazeMed.gltf","med", "Medium", "models/medMesh.gltf");
+              mapChange("models/mazeMed.gltf","med", "Current Map: Medium", "models/medMesh.gltf");
           }else{
             console.log("Changing scene from " + currentMap +  " => Hard")
-              mapChange("models/mazeHard.gltf","hard", "Hard", "models/hardMesh.gltf");
+              mapChange("models/mazeHard.gltf","hard", "Current Map: Hard", "models/hardMesh.gltf");
           }
         })
     }
