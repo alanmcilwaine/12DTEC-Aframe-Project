@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>
 
     <script src="change-map.js"></script>
+    <script src="show-path.js"></script>
 
 	<!-- <script src="/script/show-path.js"></script>
 	<script src="/script/change-world.js"></script> -->
@@ -28,6 +29,12 @@
             <a-asset-item id="mazeMed" src="models/mazeMed.gltf"></a-asset-item>
             <a-asset-item id="mazeHard" src="models/mazeHard.gltf"></a-asset-item>
             <a-asset-item id="mazeMedium" src="models/mazeMed.glb"></a-asset-item>
+
+<!-- Adding path -->
+            <a-asset-item id="pathEasy" src="models/mazeRouteEasy.gltf"></a-asset-item>
+            <a-asset-item id="pathMid" src="models/mazeRouteMed.gltf"></a-asset-item>
+            <a-asset-item id="pathHard" src="models/mazeRouteHard.gltf"></a-asset-item>
+
 <!-- Navmesh -->
         </a-assets>
 <!-- Camera -->
@@ -41,9 +48,12 @@
             </a-entity>
           </a-entity>
 
-          <a-gltf-model id="mazeCall" src="#mazeEasy" scale="12 12 12"></a-gltf-model>
-          <a-box id="easyButton" class="easy" scale="1 1 1" position="1 3 5" color="green" change-map></a-box>
-          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 5" color="orange" change-map></a-box>
-          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1 3 5" color="red" change-map></a-box>
+          <a-gltf-model id="mazeCall" class="easy" src="#mazeEasy" scale="12 12 12"></a-gltf-model>
+          <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false"></a-gltf-model>
+          <a-box id="easyButton" class="easy" scale="1 1 1" position="1 3 7" color="green" change-map></a-box>
+          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 7" color="orange" change-map></a-box>
+          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1 3 7" color="red" change-map></a-box>
+
+          <a-box id="pathButton" scale="1 1 1" position="4 3 7" color="red" show-path></a-box>
     </a-scene>
 </body>
