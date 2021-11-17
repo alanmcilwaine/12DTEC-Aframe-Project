@@ -1,3 +1,5 @@
+
+
 AFRAME.registerComponent("change-map", {
     init: function (){
         this.el.addEventListener("click", function(){
@@ -7,15 +9,19 @@ AFRAME.registerComponent("change-map", {
           let changePath = document.querySelector("#pathCall");
           let changeText = document.querySelector("#difficultyValue");
           let changeColor = document.querySelector("#pathButton");
+
+          function visibleFalse (src,difficulty){
+            changeMap.setAttribute("src", src)
+            changeMap.setAttribute("class", "easy")
+            changePath.setAttribute("visible", false)
+            changeText.setAttribute("text", "value", difficulty)
+            changeColor.setAttribute("color", "red")
+        }
 // Checks which box is clicked. (currentBox) class. 
 // Changes the map to whatever class was clicked 
           if (currentBox == "easy"){
               console.log("Changing scene from " + currentMap +  "=> Easy")
-              changeMap.setAttribute("src", "models/mazeEasy.gltf")
-              changeMap.setAttribute("class", "easy")
-              changePath.setAttribute("visible", false)
-              changeText.setAttribute("text", "value", "Easy")
-              changeColor.setAttribute("color", "red")
+              visibleFalse("models/mazeEasy.gltf","Easy");
           }else if (currentBox == "med"){
               console.log("Changing scene from " + currentMap +  "=> Medium")
               changeMap.setAttribute("src", "models/mazeMed.gltf")
