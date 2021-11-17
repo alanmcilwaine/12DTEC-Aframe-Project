@@ -47,13 +47,22 @@
                 material="color: white; shader: flat"></a-entity>
             </a-entity>
           </a-entity>
-
+<!-- Calling objects -->
           <a-gltf-model id="mazeCall" class="easy" src="#mazeEasy" scale="12 12 12"></a-gltf-model>
           <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false"></a-gltf-model>
-          <a-box id="easyButton" class="easy" scale="1 1 1" position="1 3 7" color="green" change-map></a-box>
-          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 7" color="orange" change-map></a-box>
-          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1 3 7" color="red" change-map></a-box>
+<!-- Buttons  -->
+          <a-entity id="instructionText" text="value:Hover over the buttons to change difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 5.8 11.85"></a-entity>
 
-          <a-box id="pathButton" scale="1 1 1" position="4 3 7" color="red" show-path></a-box>
+          <!-- Difficulties -->
+          <a-entity id="difficultyText" text="value:Change Difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 4.25 11.85"></a-entity>
+          <a-box id="easyButton" class="easy" scale="1 1 1" position="1.5 3 11.85" color="green" change-map></a-box>
+          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 11.85" color="orange" change-map></a-box>
+          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1.5 3 11.85" color="red" change-map></a-box>
+          <a-entity id="difficultyValue" text="value:Easy; align:center;" scale="9 9 9" rotation="180 0 180" position="0 2 11.85"></a-entity>
+
+          <!-- Cheat Path -->
+          <a-entity id="pathText" text="value:Show Final Path; align:center;" scale="12 12 12" rotation="180 0 180" position="5 4.25 11.85"></a-entity>
+          <a-box id="pathButton" scale="1 1 1" position="5 3 11.85" color="red" show-path></a-box>
+          <a-entity id="pathValue" text="value:Off; align:center;" scale="9 9 9" rotation="180 0 180" position="5 2 11.85"></a-entity>
     </a-scene>
 </body>
