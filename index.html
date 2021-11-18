@@ -40,7 +40,7 @@
             <a-asset-item id="title" src="models/title.gltf"></a-asset-item>
         </a-assets>
 <!-- Camera -->
-        <a-entity id="rig" position="0 0.1 0" movement-controls="constrainToNavMesh: true; speed: 0.4;">
+        <a-entity id="rig" position="0 0.1 -90" movement-controls="constrainToNavMesh: true; speed: 0.4;">
             <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled:true">
                 <a-entity 
                 cursor="fuse:true;fuseTimeout:500"
@@ -55,8 +55,8 @@
 <!-- Calling objects -->
           <a-gltf-model id="mazeCall" class="easy" src="#mazeEasy" scale="12 12 12"></a-gltf-model>
           <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false" position="0 0 -70"></a-gltf-model>
-          <a-gltf-model id="trophyCall" src="#trophy" position="-3.5 -0.5 -80"></a-gltf-model>
-          <a-gltf-model id="trophyCall" src="#trophy" position="3.5 -0.5 -80"></a-gltf-model>
+          <a-gltf-model id="trophyCall" class="endTrophyLeft" src="#trophy" position="-3.5 -0.5 -80"></a-gltf-model>
+          <a-gltf-model id="trophyCall" class="endTrophyRight" src="#trophy" position="3.5 -0.5 -80"></a-gltf-model>
           <a-gltf-model id="titleCall" src="#title" position="0 10 -10" rotation="120 0 0" scale="3 3 3"></a-gltf-model>
 <!-- Calling navmesh -->
           <a-gltf-model id="meshCall" src="#easyMesh" nav-mesh visible="false"></a-gltf-model>
@@ -82,11 +82,11 @@
           <a-entity id="endText" text="value:Congratulations!; align:center;" scale="24 24 24" rotation="0 0 0" position="0 6 -101.1"></a-entity>
 
           <!-- Difficulties End -->
-          <a-entity id="difficultyText" text="value:Want to try a different map?; align:center;" scale="12 12 12" rotation="0 0 0" position="0 4.25 -101.1"></a-entity>
-          <a-box id="easyButton" class="easy" scale="1 1 1" position="-1.5 2.75 -101" color="green" change-map></a-box>
-          <a-box id="medButton" class="med" scale="1 1 1" position="0 2.75 -101" color="orange" change-map></a-box>
-          <a-box id="hardButton" class="hard" scale="1 1 1" position="1.5 2.75 -101" color="red" change-map></a-box>
-          <a-entity id="difficultyValue" text="value:Current Map: Easy; align:center;" scale="9 9 9" rotation="0 0 0" position="0 1 -101.1"></a-entity>
+          <a-entity id="difficultyText" class="end endText" text="value:Want to try a different map?; align:center;" scale="12 12 12" rotation="0 0 0" position="0 4.25 -101.1"></a-entity>
+          <a-box id="easyButton" class="easy end endEasy" scale="1 1 1" position="-1.5 2.75 -100.5" color="green" change-map></a-box>
+          <a-box id="medButton" class="med end endMed" scale="1 1 1" position="0 2.75 -100.5" color="orange" change-map></a-box>
+          <a-box id="hardButton" class="hard end endHard" scale="1 1 1" position="1.5 2.75 -100.5" color="red" change-map></a-box>
+          <a-entity id="difficultyValue" class="end endValue" text="value:Current Map: Easy; align:center;" scale="9 9 9" rotation="0 0 0" position="0 1 -101.1"></a-entity>
 
           <!-- Credit -->
           <a-entity id="creditText" text="value:Credit:; align:center;" scale="12 12 12" rotation="0 -90 0" position="11 2 -7"></a-entity>
