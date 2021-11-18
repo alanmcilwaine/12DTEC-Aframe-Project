@@ -19,8 +19,8 @@ AFRAME.registerComponent("change-map", {
             changeColor.setAttribute("color", "red")
             changeMesh.setAttribute("src", meshSrc)
             cameraPosition.setAttribute("position", "0 0 0.1")
+            pathValue.setAttribute("text", "value", "Off")
         }
-
 
 // Checks which box is clicked. (currentBox) class. 
 // Changes the map to whatever class was clicked 
