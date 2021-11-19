@@ -19,6 +19,7 @@ AFRAME.registerComponent("change-map", {
           let endTrophyLeft = document.querySelector(".endTrophyLeft");
           let endTrophyRight = document.querySelector(".endTrophyRight");
           let endText = document.querySelector("#endText");
+          let endDifficultyText = document.querySelector("#endDifficultyValue")
 
           function mapChange (src, mapClass, difficulty, meshSrc){
             changeMap.setAttribute("src", src)
@@ -29,6 +30,7 @@ AFRAME.registerComponent("change-map", {
             changeMesh.setAttribute("src", meshSrc)
             cameraPosition.setAttribute("position", "0 0 0.1")
             pathValue.setAttribute("text", "value", "Off")
+            endDifficultyText.setAttribute("text", "value", difficulty)
           }
           function positionEnd (textDifficulty, easyButton, medButton, hardButton, difficultyValue, congrat, leftTrophy, rightTrophy){
             difficultyText.setAttribute("position", textDifficulty)
@@ -43,12 +45,12 @@ AFRAME.registerComponent("change-map", {
 
 // Checks which box is clicked. (currentBox) class. 
 // Changes the map to whatever class was clicked 
-          if (currentBox == "easy end EndEasy"){
+          if (currentBox == "easy end endEasy" || currentBox == "easy"){
               console.log("Changing scene from " + currentMap +  " => Easy")
               mapChange("models/mazeEasy.gltf","easy", "Current Map: Left:Easy", "models/easyMesh.gltf");
               positionEnd("0 4.25 -101.1", "-1.5 2.75 -100.5", "0 2.75 -100.5", "1.5 2.75 -100.5", "0 1 -101.1", "0 6 -101.1", "-3 -0.5 -80", "3 -0.5 -180");
 
-          }else if (currentBox == "med end EndEasy"){
+          }else if (currentBox == "med end endMed" || currentBox == "med"){
               console.log("Changing scene from " + currentMap +  " => Medium")
               mapChange("models/mazeMed.gltf","med", "Current Map: Middle:Medium", "models/medMesh.gltf");
               positionEnd("0 4.25 -145", "-1.5 2.75 -144", "0 2.75 -144", "1.5 2.75 -144", "0 1 -145", "0 6 -145", "-3 -0.5 -80", "3 -0.5 -80");
