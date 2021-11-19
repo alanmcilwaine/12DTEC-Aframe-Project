@@ -14,7 +14,7 @@
 
     <script src="change-map.js"></script>
     <script src="show-path.js"></script>
-
+    <script src="activate-music.js"></script>
 
 </head>
 
@@ -41,7 +41,7 @@
         </a-assets>
 <!-- Camera -->
         <a-entity id="rig" position="0 0.1 0" movement-controls="constrainToNavMesh: true; speed: 0.5;">
-            <a-entity camera position="0 1.6 0" look-controls>
+            <a-entity camera id="camera" position="0 1.6 0" look-controls="pointerLockEnabled:false">
                 <a-entity 
                 cursor="fuse:true;fuseTimeout:500"
                 position="0 0 -2"
@@ -57,7 +57,7 @@
           <a-gltf-model id="pathCall" src="#pathEasy" scale="12 12 12" visible="false" position="0 0 -70"></a-gltf-model>
           <a-gltf-model id="trophyCall" class="endTrophyLeft" src="#trophy" position="-3.5 -0.5 -80"></a-gltf-model>
           <a-gltf-model id="trophyCall" class="endTrophyRight" src="#trophy" position="3.5 -0.5 -80"></a-gltf-model>
-          <a-gltf-model id="titleCall" src="#title" position="0 10 -10" rotation="120 0 0" scale="3 3 3"></a-gltf-model>
+          <a-gltf-model id="titleCall" src="#title" position="0 8 -12" rotation="120 0 0" scale="3 3 3"></a-gltf-model>
 
 
 <!-- Calling navmesh -->
@@ -66,7 +66,8 @@
           <!-- START -->
           <a-entity id="instructionText" text="value:Hover over the buttons to change difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 5.8 11.85"></a-entity>
           <a-entity id="mazeInstruction" text="value:Instructions:; align:center;" scale="12 12 12" rotation="0 0 0" position="0 3 -4"></a-entity>
-          <a-entity id="mazeText" text="value:Walk with WASD and use the mouse to look around. Try to get to the end of the maze. Hover on coloured boxes to activate them.;align:center;" scale="8 8 8" rotation="0 0 0" position="0 1.5 -4"></a-entity>
+          <a-entity id="mazeText" text="value:Walk with WASD and left click and hold the mouse to look around. Try to get to the end of the maze. Hover on coloured boxes to activate them.;align:center;" scale="8 8 8" rotation="0 0 0" position="0 1.5 -4"></a-entity>
+
 
           <!-- Difficulties Start-->
           <a-entity id="difficultyText" text="value:Change Difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 4.25 11.85"></a-entity>
@@ -79,6 +80,10 @@
           <a-entity id="pathText" text="value:Show Final Path; align:center;" scale="12 12 12" rotation="180 0 180" position="5 4.25 11.85"></a-entity>
           <a-box id="pathButton" scale="1 1 1" position="5 3 11.3" color="red" show-path></a-box>
           <a-entity id="pathValue" text="value:Off; align:center;" scale="9 9 9" rotation="180 0 180" position="5 2 11.85"></a-entity>
+
+          <!-- Music -->
+          <a-box id="musicButton" scale="1 1 1" position="-5 3 11.3" color="purple" activate-music></a-box>
+          <a-entity class="off" id="music" sound="src: music/gym.mp3; volume:0.3; positional:false;" activate-music></a-entity>
 
           <!-- END -->
           <a-entity id="endText" text="value:Congratulations!; align:center; color:black;" scale="24 24 24" rotation="0 0 0" position="0 6 -101.1"></a-entity>
@@ -96,5 +101,21 @@
           <a-entity id="extrasCredit" text="value:Aframe Extras by n5ro" scale="8 8 8" rotation="0 -90 0" position="11 1.4 -1.7"></a-entity>
           <a-entity id="inspectorCredit" text="value:Aframe Inspector Plugin Recast by donmccurdy" scale="8 8 8" rotation="0 -90 0" position="11 1.4 5.3"></a-entity>
           <a-entity id="aframeCredit" text="value:Aframe by aframevr" scale="8 8 8" rotation="0 -90 0" position="11 2.1 5.3"></a-entity>
-    </a-scene>
+
+          <a-entity id="music1Credit" text="value:Gymnopedie No. 1 by Kevin MacLeod" position="-11 2.5 8" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music1Credit" text="value:Link: https://incompetech.filmmusic.io/song/3837-gymnopedie-no-1" position="-11 1.7 8" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music1Credit" text="value:License: https://filmmusic.io/standard-license" position="-11 0.9 8" rotation="0 90 0" scale="7 7 7"></a-entity>
+
+          <a-entity id="music2Credit" text="value:Welcome to the Show by Kevin MacLeod" position="-11 2.5 1" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music2Credit" text="value:Link: https://incompetech.filmmusic.io/song/4614-welcome-to-the-show" position="-11 1.7 1" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music2Credit" text="value:License: https://filmmusic.io/standard-license" position="-11 0.9 1" rotation="0 90 0" scale="7 7 7"></a-entity>
+          
+          <a-entity id="music3Credit" text="value:Happy Alley by Kevin MacLeod" position="-11 2.5 -6" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music3Credit" text="value:Link: https://incompetech.filmmusic.io/song/3851-happy-alley" position="-11 1.7 -6" rotation="0 90 0" scale="7 7 7"></a-entity>
+          <a-entity id="music3Credit" text="value:License: https://filmmusic.io/standard-license" position="-11 0.9 -6" rotation="0 90 0" scale="7 7 7"></a-entity>
+
+
+
+
+    </a-scene> 
 </body>
