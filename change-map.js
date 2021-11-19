@@ -43,12 +43,12 @@ AFRAME.registerComponent("change-map", {
 
 // Checks which box is clicked. (currentBox) class. 
 // Changes the map to whatever class was clicked 
-          if (currentBox == "easy"){
+          if (currentBox == "easy end EndEasy"){
               console.log("Changing scene from " + currentMap +  " => Easy")
               mapChange("models/mazeEasy.gltf","easy", "Current Map: Easy", "models/easyMesh.gltf");
               positionEnd("0 4.25 -101.1", "-1.5 2.75 -100.5", "0 2.75 -100.5", "1.5 2.75 -100.5", "0 1 -101.1", "0 6 -101.1", "-3 -0.5 -80", "3 -0.5 -180");
 
-          }else if (currentBox == "med"){
+          }else if (currentBox == "med end EndEasy"){
               console.log("Changing scene from " + currentMap +  " => Medium")
               mapChange("models/mazeMed.gltf","med", "Current Map: Medium", "models/medMesh.gltf");
               positionEnd("0 4.25 -145", "-1.5 2.75 -144", "0 2.75 -144", "1.5 2.75 -144", "0 1 -145", "0 6 -145", "-3 -0.5 -80", "3 -0.5 -80");
