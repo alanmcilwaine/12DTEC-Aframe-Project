@@ -82,8 +82,10 @@
           <a-entity id="pathValue" text="value:Off; align:center;" scale="9 9 9" rotation="180 0 180" position="5 2 11.85"></a-entity>
 
           <!-- Music -->
+          <a-entity id="musicText" text="value: Play Music; align:center;" scale="12 12 12" rotation="180 0 180" position="-5 4.25 11.85"></a-entity>
           <a-box id="musicButton" scale="1 1 1" position="-5 3 11.3" color="purple" activate-music></a-box>
-          <a-entity class="off" id="music" sound="src: music/gym.mp3; volume:0.3; positional:false;" activate-music></a-entity>
+          <a-entity class="off" id="music" sound="src: music/gym.mp3; volume:0.3; positional:false; loop:true;" activate-music></a-entity>
+          <a-entity id="musicValue" text="value: Track: --; align:center;" scale="9 9 9" rotation="180 0 180" position="-5 2 11.85"></a-entity>
 
           <!-- END -->
           <a-entity id="endText" text="value:Congratulations!; align:center; color:black;" scale="24 24 24" rotation="0 0 0" position="0 6 -101.1"></a-entity>
