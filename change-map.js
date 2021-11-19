@@ -45,16 +45,16 @@ AFRAME.registerComponent("change-map", {
 // Changes the map to whatever class was clicked 
           if (currentBox == "easy end EndEasy"){
               console.log("Changing scene from " + currentMap +  " => Easy")
-              mapChange("models/mazeEasy.gltf","easy", "Current Map: Easy", "models/easyMesh.gltf");
+              mapChange("models/mazeEasy.gltf","easy", "Current Map: Left:Easy", "models/easyMesh.gltf");
               positionEnd("0 4.25 -101.1", "-1.5 2.75 -100.5", "0 2.75 -100.5", "1.5 2.75 -100.5", "0 1 -101.1", "0 6 -101.1", "-3 -0.5 -80", "3 -0.5 -180");
 
           }else if (currentBox == "med end EndEasy"){
               console.log("Changing scene from " + currentMap +  " => Medium")
-              mapChange("models/mazeMed.gltf","med", "Current Map: Medium", "models/medMesh.gltf");
+              mapChange("models/mazeMed.gltf","med", "Current Map: Middle:Medium", "models/medMesh.gltf");
               positionEnd("0 4.25 -145", "-1.5 2.75 -144", "0 2.75 -144", "1.5 2.75 -144", "0 1 -145", "0 6 -145", "-3 -0.5 -80", "3 -0.5 -80");
           }else{
             console.log("Changing scene from " + currentMap +  " => Hard")
-              mapChange("models/mazeHard.gltf","hard", "Current Map: Hard", "models/hardMesh.gltf");
+              mapChange("models/mazeHard.gltf","hard", "Current Map: Right:Hard", "models/hardMesh.gltf");
               positionEnd("0 4.25 -193", "-1.5 2.75 -192.5", "0 2.75 -192.5", "1.5 2.75 -192.5", "0 1 -193", "0 6 -193", "-3 -0.5 -170", "3 -0.5 -170");
 
           }
