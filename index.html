@@ -70,9 +70,9 @@
 
           <!-- Difficulties Start-->
           <a-entity id="difficultyText" text="value:Change Difficulty; align:center;" scale="12 12 12" rotation="180 0 180" position="0 4.25 11.85"></a-entity>
-          <a-box id="easyButton" class="easy" scale="1 1 1" position="1.5 3 11" color="green" change-map></a-box>
-          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 11" color="orange" change-map></a-box>
-          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1.5 3 11" color="red" change-map></a-box>
+          <a-box id="easyButton" class="easy" scale="1 1 1" position="1.5 3 11" color="green" wireframe="true" change-map></a-box>
+          <a-box id="medButton" class="med" scale="1 1 1" position="0 3 11" color="orange" wireframe="false" change-map></a-box>
+          <a-box id="hardButton" class="hard" scale="1 1 1" position="-1.5 3 11" color="red" wireframe="false" change-map></a-box>
           <a-entity id="difficultyValue" text="value:Current Map: Left:Easy; align:center;" scale="9 9 9" rotation="180 0 180" position="0 2 11.85"></a-entity>
 
           <!-- Cheat Path Start-->
@@ -85,9 +85,9 @@
 
           <!-- Difficulties End -->
           <a-entity id="difficultyText" class="end endText" text="value:Want to try a different map?; align:center; color:black;" scale="12 12 12" rotation="0 0 0" position="0 4.25 -101.1"></a-entity>
-          <a-box id="easyButton" class="easy end endEasy" scale="1 1 1" position="-1.5 2.75 -100.5" color="green" change-map></a-box>
-          <a-box id="medButton" class="med end endMed" scale="1 1 1" position="0 2.75 -100.5" color="orange" change-map></a-box>
-          <a-box id="hardButton" class="hard end endHard" scale="1 1 1" position="1.5 2.75 -100.5" color="red" change-map></a-box>
+          <a-box id="easyButtonEnd" class="easy end endEasy" scale="1 1 1" position="-1.5 2.75 -100.5" color="green" wireframe="true" change-map></a-box>
+          <a-box id="medButtonEnd" class="med end endMed" scale="1 1 1" position="0 2.75 -100.5" color="orange" wireframe="false" change-map></a-box>
+          <a-box id="hardButtonEnd" class="hard end endHard" scale="1 1 1" position="1.5 2.75 -100.5" color="red" wireframe="false" change-map></a-box>
           <a-entity id="endDifficultyValue" class="end endValue" text="value:Current Map: Left:Easy; align:center; color:black;"  scale="9 9 9" rotation="0 0 0" position="0 1 -101.1"></a-entity>
 
           <!-- Credit -->
